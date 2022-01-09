@@ -29,7 +29,7 @@ limitations under the License.
                     protocol="zookeeper"/>
 
     <!-- use dubbo protocol to export service on port 20880 -->
-    <dubbo:protocol name="dubbo" port="20880"/>
+    <dubbo:protocol name="dubbo" port="20880" threads="10000"/>
 
     <!-- service implementation, as same as regular local bean -->
     <bean id="demoService" class="org.example.provider.DemoServiceImpl"/>

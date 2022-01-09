@@ -19,12 +19,17 @@ public class DubboConsumerMain {
      * @param demoService
      */
     private void testLeastActiveLoadBalance(DemoService demoService){
-        for (int i = 0; i < 10; i++){
-            int finalI = i;
-            new Thread(() -> {
-                demoService.sayHello("测试最小连接数" + finalI);
-            }).start();
+//        for (int i = 0; i < 10; i++){
+//            int finalI = i;
+//            new Thread(() -> {
+//                demoService.sayHello("测试最小连接数" + finalI);
+//            }).start();
+//        }
+//        demoService.sayHello("测试最小连接数-debug");
+
+
+        for (int i = 0; i < 10000; i++){
+            demoService.sayHello("测试最小连接数" + i);
         }
-        demoService.sayHello("测试最小连接数-debug");
     }
 }
