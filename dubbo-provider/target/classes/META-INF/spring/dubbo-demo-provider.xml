@@ -35,6 +35,8 @@ limitations under the License.
     <bean id="demoService" class="org.example.provider.DemoServiceImpl"/>
 
     <!-- declare the service interface to be exported -->
-    <dubbo:service interface="org.example.api.DemoService" ref="demoService" loadbalance="leastactive"/>
+    <dubbo:service interface="org.example.api.DemoService"
+                   ref="demoService"
+                   loadbalance="roundrobin"/>
 
 </beans>
